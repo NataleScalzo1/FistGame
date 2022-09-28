@@ -312,8 +312,9 @@ func run() {
 		{rect: pixel.R(-180, -37, -170, -35)},
 		{rect: pixel.R(-150, -7, -140, -5)},
 	}
+
 	for i := range platforms {
-		platforms[i].color = randomNiceColor()
+		platforms[i].color = pixel.RGB(0, 0, 0)
 	}
 
 	gol := &goal{
@@ -367,7 +368,7 @@ func run() {
 		anim.update(dt, phys)
 
 		// draw the scene to the canvas using IMDraw
-		canvas.Clear(colornames.Black)
+		canvas.Clear(colornames.White)
 		imd.Clear()
 		for _, p := range platforms {
 			p.draw(imd)
